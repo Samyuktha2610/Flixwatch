@@ -1,0 +1,109 @@
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: #fff;
+}
+
+.login-form {
+  background: #111;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  gap: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.login-form h2 {
+  margin-bottom: 1rem;
+  color: #e50914;
+  text-align: center;
+}
+
+.login-form input {
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: none;
+  background: #222;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ✅ Proper spacing between email and password */
+.password-group {
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.password-group input {
+  padding-right: 2.5rem;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #aaa;
+}
+
+/* ✅ Primary Login Button */
+.login-form button[type="submit"] {
+  padding: 0.75rem;
+  background: #e50914;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.login-form button[type="submit"]:hover {
+  background: #b20710;
+}
+
+/* ✅ Forgot Password Button same size & look */
+.reset-link {
+  padding: 0.75rem;
+  background: #e50914;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.success-msg {
+  color: #4caf50;
+  font-weight: bold;
+  text-align: center;
+}
+
+.error-msg {
+  color: #ff6b6b;
+  font-weight: bold;
+  text-align: center;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+  text-align: center;
+}

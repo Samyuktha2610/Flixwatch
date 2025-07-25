@@ -1,0 +1,17 @@
+.watch-page {
+  padding: 100px 20px 40px;
+  text-align: center;
+  color: white;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+.watch-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.video-player iframe {
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+}
