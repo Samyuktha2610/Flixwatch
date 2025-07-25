@@ -6,7 +6,7 @@ import './styles/App.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/flixwatch"> {/* ✅ Add this line */}
       <App />
     </BrowserRouter>
   </React.StrictMode>
