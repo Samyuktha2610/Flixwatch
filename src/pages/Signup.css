@@ -5,16 +5,41 @@
   align-items: center;
   background: #000;
   color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .auth-form {
   background: #111;
   padding: 2rem;
   border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
-  width: 320px;
-  gap: 1rem;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.auth-form h2 {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.success-msg,
+.error-msg {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.success-msg {
+  color: #4caf50;
+}
+
+.error-msg {
+  color: #ff6b6b;
 }
 
 .auth-form input {
@@ -23,75 +48,97 @@
   border: none;
   background: #222;
   color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
 }
 
-/* ✅ Updated Password Group */
+.auth-form input:focus {
+  box-shadow: 0 0 0 2px white;
+  outline: none;
+}
+
 .password-group {
   position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .password-group input {
-  width: 100%;
-  padding: 0.75rem;
   padding-right: 2.5rem;
-  border: none;
-  border-radius: 5px;
-  background: #222;
-  color: #fff;
-  box-sizing: border-box;
+  margin-bottom: 0;
 }
 
 .toggle-btn {
   position: absolute;
-  right: 10px;
   top: 50%;
+  right: 10px;
   transform: translateY(-50%);
-  background: none;
+  background: transparent;
   border: none;
+  color: #aaa;
   font-size: 1.2rem;
   cursor: pointer;
-  color: #aaa;
-  padding: 0;
-  height: 24px;
-  width: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.auth-form button {
+.auth-form button[type="submit"] {
   padding: 0.75rem;
+  margin-top: 1.5rem;
   background: #e50914;
   border: none;
   border-radius: 5px;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
 }
 
-.auth-form button:hover {
+.auth-form button[type="submit"]:hover {
   background: #b20710;
 }
+
+.google-btn {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #e50914;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.google-btn:hover {
+  background: #b20710;
+}
+
 
 .auth-form p {
   font-size: 0.9rem;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .auth-form span {
   color: #e50914;
   cursor: pointer;
+  font-weight: bold;
 }
 
-.success-msg {
-  color: #4caf50;
-  font-weight: bold;
-  text-align: center;
-}
-
-.error-msg {
-  color: #ff6b6b;
-  font-weight: bold;
-  text-align: center;
+/* Optional: Responsive tweak */
+@media (max-width: 400px) {
+  .auth-form {
+    width: 100%;
+    padding: 1.5rem;
+  }
 }

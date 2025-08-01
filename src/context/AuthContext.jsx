@@ -7,7 +7,9 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
-  signOut
+  signOut,
+  signInWithPopup, // ✅ ADDED
+  GoogleAuthProvider // ✅ ADDED
 } from 'firebase/auth';
 
 // 🔐 Firebase config (yours)
@@ -53,9 +55,6 @@ export const AuthProvider = ({ children }) => {
 
   // ✅ Login with Firebase
   const login = async (email, password) => {
-    // Optional: Restrict to your Gmail only
-    // if (email !== 'yourgmail@example.com') throw new Error("Only admin account allowed.");
-
     await signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -69,8 +68,13 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('flixwatch-user');
   };
 
+  // ✅ Google Login (NEWLY ADDED)
+  const googleLogin = () => signInWithPopup(auth, new GoogleAuthProvider());
+
   return (
-    <AuthContext.Provider value={{ user, signup, login, resetPassword, logout }}>
+    <AuthContext.Provider
+      value={{ user, signup, login, resetPassword, logout, googleLogin }} // ✅ Expose googleLogin
+    >
       {children}
     </AuthContext.Provider>
   );

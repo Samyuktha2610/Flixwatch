@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { signInWithPopup } from "firebase/auth"; // 👉 added
+import { auth, googleProvider } from "../firebase"; // 👉 added
 import "./Signup.css";
 
 const Signup = () => {
@@ -23,6 +25,19 @@ const Signup = () => {
       console.error("Signup error:", err);
       setError(err.message || "Signup failed");
       setSuccess("");
+    }
+  };
+
+  // 👉 Google Sign-In handler
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+      console.log("Logged in with Google:", user.displayName);
+      navigate("/browse");
+    } catch (err) {
+      console.error("Google Login Failed", err);
+      setError("Google login failed");
     }
   };
 
@@ -55,6 +70,12 @@ const Signup = () => {
         </div>
 
         <button type="submit">Sign Up</button>
+
+        {/* 👉 Google Sign-In Button */}
+        <button type="button" onClick={handleGoogleLogin} className="google-btn">
+          Sign Up with Google
+        </button>
+
         <p>
           Already have an account?{" "}
           <span onClick={() => navigate("/login")}>Sign In</span>

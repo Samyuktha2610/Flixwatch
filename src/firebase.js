@@ -1,7 +1,9 @@
-// ✅ firebase.js (Final)
+// firebase.js
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
+// ✅ Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyB-BX5ufxIjDPNRn2cBS340xKgcA1uYXio",
   authDomain: "flixwatch-2950b.firebaseapp.com",
@@ -12,5 +14,10 @@ const firebaseConfig = {
   measurementId: "G-83HB08EN47"
 };
 
+// ✅ Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+
+// ✅ Initialize services
+export const auth = getAuth(app); // Firebase Auth
+export const googleProvider = new GoogleAuthProvider(); // Google OAuth
+export const db = getFirestore(app); // Firestore DB

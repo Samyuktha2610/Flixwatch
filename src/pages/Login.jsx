@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <div className="login-page">
       <div className="login-form">
-        <h2>Sign In</h2>
+        <h2>Login to your account</h2>
         {error && <p className="error-msg">{error}</p>}
         {success && <p className="success-msg">{success}</p>}
         <form onSubmit={handleSubmit}>
